@@ -1,6 +1,5 @@
 import VueRouter from 'vue-router'
-import Home from '../views/home.vue'
-import User from '../views/user.vue'
+import User from '../views/User/index.vue'
 import Vue from "vue"
 Vue.use(VueRouter)
 //1 创建路由组件
@@ -8,8 +7,13 @@ Vue.use(VueRouter)
 const routes =[
     {
         path:'/',
-        name:'Home',
-        component:Home
+        name:'Main',
+        component:() => import('../views/Main.vue'),
+        children:[{
+            path:'/home',
+            name:'home',
+            component:() => import('../views/home')
+        }]
     },
     {
         path:'/user',

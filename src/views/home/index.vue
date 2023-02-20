@@ -1,17 +1,17 @@
 <template>
-  <div>我是user页面
-    <router-link to="/">
+  <div>我是home页面
+    <router-link to="/home">
       <el-button>home</el-button>
     </router-link>
-    <router-link to="/user">
-      <el-button type="primary">user</el-button>
+    <router-link to="/home">
+      <el-button type="primary">home</el-button>
     </router-link>
   </div>
 </template>
 
 <script>
 export default{
-  name:'User-user',
+  name:'Main-main',
   data(){
     return{}
   },

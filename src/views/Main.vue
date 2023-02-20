@@ -1,33 +1,38 @@
 <template>
-<!--  <div>我是home页面-->
-<!--    <el-button type="primary">主要按钮</el-button>-->
+  <div>
+
 <!--    <router-link to="/">-->
 <!--      <el-button>home</el-button>-->
 <!--    </router-link>-->
-<!--    <router-link to="/user">-->
+<!--    <router-link to="/Main">-->
 <!--      <el-button type="primary">user</el-button>-->
 <!--    </router-link>-->
-<!--  </div>-->
-  <div>
     <el-container style="height: 100%">
       <el-aside width="auto">
         <common-aside>我在这里哦</common-aside>
       </el-aside>
       <el-container>
-        <el-header>Header</el-header>
-        <el-main>Main</el-main>
+        <el-header>
+          <common-header></common-header>
+        </el-header>
+        <el-main>  <router-view></router-view> </el-main>
       </el-container>
     </el-container>
-
   </div>
+
+
+
+
 </template>
 
 <script>
 import commonAside from "@/views/commonAside.vue";
+import commonHeader from "@/views/commonHeader.vue";
 export default {
-  name: 'Home-home',
+  name: 'Main-main',
   components:{
-    commonAside
+    commonAside,
+    commonHeader,
   },
   data() {
     return {}
@@ -35,6 +40,11 @@ export default {
 }
 </script>
 <style lang="scss" rel="stylesheet/scss" scoped>
+
+
+
+
+
 .el-header{
   background-color: #333;
 }
