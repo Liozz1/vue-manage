@@ -28,11 +28,15 @@
 <script>
 import commonAside from "@/views/commonAside.vue";
 import commonHeader from "@/views/commonHeader.vue";
+import indexh from "@/views/home/indexh.vue";
+
 export default {
   name: 'Main-main',
   components:{
     commonAside,
     commonHeader,
+    indexh,
+
   },
   data() {
     return {}

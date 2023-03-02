@@ -1,15 +1,15 @@
 <template>
-  <div>我是user页面
+  <div>我是商品管理页面
     <router-link to="/"></router-link>
-    <router-link to="/user">
-      <el-button type="primary">user</el-button>
+    <router-link to="/mall">
+      <el-button type="primary">mall</el-button>
     </router-link>
   </div>
 </template>
 
 <script>
 export default{
-  name:'User-user',
+  name:'Mall-mall',
   data(){
     return{}
   },

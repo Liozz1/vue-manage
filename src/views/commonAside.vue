@@ -1,31 +1,30 @@
+
 <template>
-  <div class="aside" >
-    <el-menu default-active="1-4-1" class="el-menu-vertical-demo" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
-      <h3>后勤物料管理系统</h3>
-    <el-menu-item @click="clickMenu(item)" v-for="item in noChildren" :index="item.path" :key="item.path"> <!--key可以使虚拟dom更快的查找到应该修改的节点-->
-      <i :class="'el-icon-' + item.icon"></i>
-      <span slot="title">{{item.label}}</span>
+  <el-menu
+      default-active="1-4-1"
+      class="el-menu-vertical-demo"
+      @open="handleOpen"
+      @close="handleClose"
+      :collapse="isCollapse"
+      background-color="#545c64"
+      text-color="#fff"
+      active-text-color="#ffd04b"
+  >
+    <h3>{{ isCollapse ? '后台' : '通用后台管理系统' }}</h3>
+    <el-menu-item @click="clickMenu(item)" v-for="item in noChildren" :key="item.name" :index="item.name">
+      <i :class="`el-icon-${item.icon}`"></i>
+      <span slot="title">{{ item.label }}</span>
     </el-menu-item>
-    <el-submenu  v-for="item in hasChildren" :index="item.path" :key="item.path">
-
-
+    <el-submenu v-for="item in hasChildren" :key="item.label" :index="item.label">
       <template slot="title">
-        <i :class="'el-icon-' + item.icon"></i>
-        <span slot="title">{{item.label}}</span>
+        <i :class="`el-icon-${item.icon}`"></i>
+        <span slot="title">{{ item.label }}</span>
       </template>
-      <el-menu-item-group v-for="(subItem,subIndex) in item.children"  :key="subItem.path">
-
-        <el-menu-item :index="subIndex">{{subItem.label}}</el-menu-item>
-
+      <el-menu-item-group v-for="subItem in item.children" :key="subItem.path">
+        <el-menu-item @click="clickMenu(subItem)" :index="subItem.path">{{ subItem.label }}</el-menu-item>
       </el-menu-item-group>
-
-
     </el-submenu>
-
-
-
   </el-menu>
-  </div>
 </template>
 <style lang="scss" scoped>
 .aside{
