@@ -5,11 +5,11 @@
         <common-aside>我在这里哦</common-aside>
       </el-aside>
       <el-container>
-        <el-header>
+        <el-header style="background-color: rgb(84, 92, 100); color: white " >
           <common-header></common-header>
         </el-header>
-        <common-tag>
-        </common-tag>
+<!--        <common-tag>-->
+<!--        </common-tag>-->
         <el-main  overflow-y: scroll>  <router-view></router-view> </el-main>
 
       </el-container>
@@ -20,13 +20,13 @@
 <script>
 import commonAside from "@/views/commonAside.vue";
 import commonHeader from "@/views/commonHeader.vue";
-import CommonTag from "@/views/commonTag.vue";
+// import CommonTag from "@/views/commonTag.vue";
 
 
 export default {
   name: 'Main-main',
   components:{
-    CommonTag,
+    // CommonTag,
     commonAside,
     commonHeader,
 

@@ -11,34 +11,37 @@ const routes =[
         redirect: '/home',
         component:() => import('../views/Main.vue'),
 
-        children:[{
+        children:[
+            {
             path:'/home',
             name:'home',
             component:() => import('../views/home/indexh.vue')
-        }]
-    },
-    {
-        path:'/user',
-        name:'User',
-        component:() => import('../views/User/index.vue')
-    },
-    {
-        path:'/mall',
-        name:'mall',
-        component:() => import('../views/mall/index.vue'),
-    },
-    {
+        },
+            {
+                path:'/user',
+                name:'user',
+                component:() => import('../views/User/index.vue')
+            },
+            {
+                path:'/mall',
+                name:'mall',
+                component:() => import('../views/mall/index.vue'),
+            },
+            {
 
-        path:'/pageOne',
-        name:'pageOne',
-        component:() => import('../views/other/pageOne.vue'),
-    },
-    {
+                path:'/pageOne',
+                name:'pageOne',
+                component:() => import('../views/other/pageOne.vue'),
+            },
+            {
 
-        path:'/pageTwo',
-        name:'pageTwo',
-        component:() => import('../views/other/pageTwo.vue'),
-    }
+                path:'/pageTwo',
+                name:'pageTwo',
+                component:() => import('../views/other/pageTwo.vue'),
+            }
+        ]
+    },
+
 ]
 //3 创建router实例
 //4 在main.js中import

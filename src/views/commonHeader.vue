@@ -3,8 +3,8 @@
     <div class="l-content">
       <el-button @click="handleMenu" plain icon="el-icon-menu" size="mini"> </el-button>
 <!--      <h3 style="color: aliceblue">首页</h3>-->
-      <el-breadcrumb  style="color: darkgray" separator="/" >
-        <el-breadcrumb-item  v-for="item in tags" :key="item.path" :to="{ path: item.path }">{{item.label}}</el-breadcrumb-item>
+      <el-breadcrumb   separator="/" >
+        <el-breadcrumb-item  style="color: white" v-for="item in tags" :key="item.path" :to="{ path: item.path }">{{item.label}}</el-breadcrumb-item>
       </el-breadcrumb>
     </div>
     <div class="r-content">

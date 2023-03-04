@@ -1,5 +1,7 @@
 <template>
+
   <el-container style="height: 100%">
+    <h1>这里是页面一</h1>
     <el-aside width="auto">
       <common-aside></common-aside>
     </el-aside>

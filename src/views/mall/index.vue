@@ -1,9 +1,6 @@
 <template>
-  <div>我是商品管理页面
-    <router-link to="/"></router-link>
-    <router-link to="/mall">
-      <el-button type="primary">mall</el-button>
-    </router-link>
+  <div>我是物资管理页面
+
   </div>
 </template>
 
