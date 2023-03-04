@@ -1,12 +1,5 @@
 <template>
   <div>
-
-<!--    <router-link to="/">-->
-<!--      <el-button>home</el-button>-->
-<!--    </router-link>-->
-<!--    <router-link to="/Main">-->
-<!--      <el-button type="primary">user</el-button>-->
-<!--    </router-link>-->
     <el-container style="height: 100%">
       <el-aside width="auto">
         <common-aside>我在这里哦</common-aside>
@@ -15,27 +8,28 @@
         <el-header>
           <common-header></common-header>
         </el-header>
-        <el-main>  <router-view></router-view> </el-main>
+        <common-tag>
+        </common-tag>
+        <el-main  overflow-y: scroll>  <router-view></router-view> </el-main>
+
       </el-container>
     </el-container>
   </div>
-
-
-
-
 </template>
 
 <script>
 import commonAside from "@/views/commonAside.vue";
 import commonHeader from "@/views/commonHeader.vue";
-import indexh from "@/views/home/indexh.vue";
+import CommonTag from "@/views/commonTag.vue";
+
 
 export default {
   name: 'Main-main',
   components:{
+    CommonTag,
     commonAside,
     commonHeader,
-    indexh,
+
 
   },
   data() {
@@ -49,10 +43,26 @@ export default {
 
 
 
-.el-header{
-  background-color: #333;
+
+.el-header {
+  color: darkgray;
+  position: relative;
+  width: 100%;
+  height: 60px;
 }
-.el-main{
-  padding-top: 0;
+.el-main {
+  position: absolute;
+  left: 200px;
+  right: 0;
+  top: 60px;
+  bottom: 0;
+  overflow-y: scroll;
+}
+.el-aside {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 60px;
+  bottom: 0;
 }
 </style>

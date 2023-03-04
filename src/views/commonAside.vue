@@ -15,15 +15,19 @@
       <i :class="`el-icon-${item.icon}`"></i>
       <span slot="title">{{ item.label }}</span>
     </el-menu-item>
-    <el-submenu v-for="item in hasChildren" :key="item.label" :index="item.label">
-      <template slot="title">
-        <i :class="`el-icon-${item.icon}`"></i>
-        <span slot="title">{{ item.label }}</span>
-      </template>
-      <el-menu-item-group v-for="subItem in item.children" :key="subItem.path">
-        <el-menu-item @click="clickMenu(subItem)" :index="subItem.path">{{ subItem.label }}</el-menu-item>
-      </el-menu-item-group>
-    </el-submenu>
+<!--    <el-submenu v-for="item in hasChildren" :key="item.label" :index="item.label">-->
+<!--      <template slot="title">-->
+<!--        <i :class="`el-icon-${item.icon}`"></i>-->
+<!--        <span slot="title">{{ item.label }}</span>-->
+<!--      </template>-->
+
+
+
+<!--      -->
+<!--      <el-menu-item-group v-for="subItem in item.children" :key="subItem.path">-->
+<!--        <el-menu-item @click="clickMenu(subItem)" :index="subItem.path">{{ subItem.label }}</el-menu-item>-->
+<!--      </el-menu-item-group>-->
+<!--    </el-submenu>-->
   </el-menu>
 </template>
 <style lang="scss" scoped>
@@ -65,7 +69,8 @@ export default {
           icon: 'video-play',
           url:'MallManage/MallManage'
 
-        },{
+        },
+        {
           path:  '/user',
           name:'user',
           label: '员工管理',
@@ -73,27 +78,27 @@ export default {
           url:'UserManage/UserManage'
 
         },
-        {
-          label:'其他',
-          icon: 'location',
-          children:[
+
+
+
             {
-              path:'page1',
-              name:'page1',
+              path:'/PageOne',
+              name:'pageOne',
               label:'页面1',
               icon:'setting',
               url:'Other/PageOne',
 
-            },{ path:'page2',
-              name:'page2',
+            },
+        { path:'/PageTwo',
+              name:'pageTwo',
               label:'页面2',
               icon:'setting',
               url:'Other/PageTwo',
 
             }
           ]
-        }
-      ]
+
+
     };
   },
   methods: {
@@ -104,9 +109,11 @@ export default {
       console.log(key, keyPath);
     },
     clickMenu(item) {
+      console.log(item.name)
       this.$router.push({
         name:item.name
       })
+      this.$store.commit('selectMenu',item)
     }
 
     },

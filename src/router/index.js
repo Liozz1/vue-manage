@@ -1,5 +1,5 @@
 import VueRouter from 'vue-router'
-import User from '../views/User/index.vue'
+
 import Vue from "vue"
 Vue.use(VueRouter)
 //1 创建路由组件
@@ -20,7 +20,7 @@ const routes =[
     {
         path:'/user',
         name:'User',
-        component:User
+        component:() => import('../views/User/index.vue')
     },
     {
         path:'/mall',
