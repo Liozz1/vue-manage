@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import ElementUI from 'element-ui';
+import ElementUI, {Message, MessageBox} from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import App from './App.vue';
 import router from './router'
@@ -11,6 +11,18 @@ import '../src/api/mock'
 
 Vue.use(ElementUI);
 Vue.prototype.$http = http
+Vue.prototype.$message = Message
+Vue.prototype.$confirm = MessageBox.confirm
+
+router.beforeEach((to,from,next)=>{
+  store.commit('getToken')
+  const token = store.state.user.token
+  if(!token && to.name !=='login'){
+    next({name:'login'})
+  }else {
+    next()
+  }
+})
 
 new Vue({
   store,
